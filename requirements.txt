@@ -1,0 +1,12 @@
+# Core engine + CLI
+requests>=2.31      # OpenAI-compatible HTTP transport (Groq/Gemini/OpenAI/Ollama)
+rich>=13.0          # live tree rendering in the CLI
+
+# Web UI
+streamlit>=1.30     # browser front-end with Graphviz tree visualisation
+
+# Tests
+pytest>=7.0
+
+# Note: provider='mock' needs none of the network libs — the engine and tests
+# run fully offline with just the Python standard library.

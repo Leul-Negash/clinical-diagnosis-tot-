@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clinical-tot-researcher"
+version = "1.0.0"
+description = "A deep-research chatbot for clinical differential diagnosis, powered by Tree-of-Thoughts deliberate reasoning (Yao et al. 2023, arXiv:2305.10601)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "requests>=2.31",
+    "rich>=13.0",
+]
+
+[project.optional-dependencies]
+web = ["streamlit>=1.30"]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+tot-diagnose = "cli:main"
+
+[tool.setuptools]
+packages = ["tot"]
+py-modules = ["cli"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
